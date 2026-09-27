@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,3 +46,6 @@ return view('tasks.index');
 })->name('tasksRouteName');
 
 
+
+
+Route::get('send-mail', [MailController::class, 'sendEmail']);
