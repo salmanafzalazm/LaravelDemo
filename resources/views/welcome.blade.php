@@ -19,9 +19,9 @@
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a href="/" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Home</a>
-            <a href="/product" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Task</a>
-            <a href="{{ route('tasksRouteName')}}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+            <a href="/" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">{{__('local.home')}}</a>
+            <a href="/product" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">{{__('local.task')}}</a>
+            <a href="{{ route('tasksRouteName')}}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">{{__('local.projects')}}</a>
 
             {{-- {{ route('tasks.index') }} --}}
           </div>
@@ -30,12 +30,12 @@
     </div>
 
 </nav>
-
-
 <div>
 <h1>Home Page</h1>
-</div>
 
+
+<h2>{{__('local.helloUser', ["name"=> "Salman Afzal"])}}</h2>
+</div>
     </body>
 
 </html>

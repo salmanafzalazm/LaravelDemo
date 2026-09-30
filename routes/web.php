@@ -11,6 +11,14 @@ Route::get('/', function () {
 });
 
 
+// to localize a specific page 
+// for localization
+// Route::get('/{lang}', function ($lang) {
+//     App::setLocale($lang);
+//     return view('welcome');
+// });
+
+
 // 2/ Products
 
 // Route::get('/products', [ProductController::class, 'index'] )->name('products.index');
