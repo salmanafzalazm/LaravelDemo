@@ -22,6 +22,9 @@
             <a href="/" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">{{__('local.home')}}</a>
             <a href="/product" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">{{__('local.task')}}</a>
             <a href="{{ route('tasksRouteName')}}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">{{__('local.projects')}}</a>
+            <a href="/setlang/en" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">EN</a>
+            <a href="/setlang/ar" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Ar</a>
+
 
             {{-- {{ route('tasks.index') }} --}}
           </div>

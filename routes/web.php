@@ -5,13 +5,21 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
-//1:  welcome
+Route::middleware('Setlang')->group(function(){
 Route::get('/', function () {
     return view('welcome');
 });
+});
 
 
-// to localize a specific page 
+
+// //1:  welcome
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+// to localize a specific page
 // for localization
 // Route::get('/{lang}', function ($lang) {
 //     App::setLocale($lang);
@@ -57,3 +65,10 @@ return view('tasks.index');
 
 
 Route::get('send-mail', [MailController::class, 'sendEmail']);
+
+
+// To Set Localization in a session
+Route::get('setlang/{lang}', function($lang){
+Session::put('lang', $lang);
+return redirect('/');
+});

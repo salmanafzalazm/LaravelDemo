@@ -11,19 +11,44 @@ class ProductApiController extends Controller
     //
 
     function list(){
-        // return 'this is the list';
-         return Product::all();
+    $locale = request()->header('X-Localization', 'en');
+
+    if ($locale === 'ar') {
+
+  $products = Product::all();
+
+$products = $products->map(function ($product) {
+    return [
+        ...$product->toArray(),
+        "arabic_name" => "المنتج",
+    ];
+});
+
+return $products;
+
+return [
+    "product_detail" => $products
+];
+
+}   else {
+
+    return Product::all();
+}
+
     }
 
       function getProduct(Request $request){
         // return 'this is the list';
-         $name = $request->name;
+
 // dd($name );
 // where(column, operator, value)
 // Product::where('name', 'LIKE', '%' . $name . '%')
 // Product::where(column: 'name', operator: $name, value: $name)
 
 
+
+
+          $name = $request->name;
 
          return Product::where(column: 'name', operator: '=', value: $name)
          ->orderBy(column: 'id', direction: 'desc')
@@ -32,7 +57,7 @@ class ProductApiController extends Controller
 
          // all vs get
          // if we want to get all data then we will use alll
-         // if we want to add where condition we will use get 
+         // if we want to add where condition we will use get
 
     }
 

@@ -3,17 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\SimpleLogger;
 use Illuminate\Http\Request;
 
 
 
 class ProductController extends Controller
 {
-    //
+
+
+
+public function __construct(public SimpleLogger $simpleLogger){
+
+}
+
+
 
 public function index(){
 //dd('ProductController.index');
 
+// call a simple loggrt
+
+$loggerMessage =  $this->simpleLogger->log("show all list of products");
+
+// dd($loggerMessage);
 
 $products =  Product::all();
 // dd($products->toArray());
