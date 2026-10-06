@@ -17,8 +17,9 @@
     {{-- HEADER / NAVIGATION: top menu shown on every page --}}
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div class="flex items-center">
-                {{-- Logo --}}
+            <div class="flex items-center justify-between">
+                {{-- Left side: logo + menu links --}}
+                <div class="flex items-center">
                 <div class="flex shrink-0 items-center py-2">
                     <img src="https://azmdigital.sa/images/logo-w.png" alt="Your Company" class="h-8 w-auto" />
                 </div>
@@ -28,8 +29,11 @@
                     <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">{{ __('local.home') }}</a>
                     <a href="{{ route('product.index') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">{{ __('local.task') }}</a>
                     <a href="{{ route('tasksRouteName') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">{{ __('local.projects') }}</a>
+                </div>
+                </div>
 
-                    {{-- Language switcher --}}
+                {{-- Right side: language switcher --}}
+                <div class="flex space-x-2">
                     <a href="/setlang/en" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">EN</a>
                     <a href="/setlang/ar" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Ar</a>
                 </div>
