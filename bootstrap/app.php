@@ -14,8 +14,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // localization middleware
-        $middleware->appendToGroup('Setlang', Setlang::class);
+         // $middleware->appendToGroup('Setlang', Setlang::class);
+        // localization middleware: added to the 'web' group so it runs on every web page
+        $middleware->appendToGroup('web', Setlang::class);
 
 
     })
