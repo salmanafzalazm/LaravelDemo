@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\App;
 
 class Setlang
 {
@@ -17,7 +18,7 @@ class Setlang
     {
 
         if($request->session()->get('lang')){
-          \App::setLocale($request->session()->get('lang'));
+        App::setLocale($request->session()->get('lang'));
         }
 
         return $next($request);
