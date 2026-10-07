@@ -10,17 +10,22 @@ class MailController extends Controller
 {
 
 
-    function sendEmail(){
-
-
-     $to = "salman.afzal@azm.dev";
-     $subject = "Welcome Email";
-     $message = "This is a welcome message from salman Demo";
-
-
-     Mail::to($to)->send(new WelcomeEmail($message, $subject));
-
+    function showForm(){
+        return view('mail.sendform');
     }
+
+    function sendEmail(Request $request){
+
+        $request->validate(['email' => 'required|email']);
+
+        $to = $request->input('email');
+        $subject = "Welcome Email";
+        $message = "This is a welcome message from salman Demo";
+        Mail::to($to)->send(new WelcomeEmail($message, $subject));
+
+        return back()->with('status', "Email sent to $to");
+    }
+
 
 
 

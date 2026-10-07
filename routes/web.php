@@ -11,6 +11,15 @@ Route::get('/', function () {
 
 
 
+// Route::middleware('Setlang')->group(function(){
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// });
+
+
+
+
 // //1:  welcome
 // Route::get('/', function () {
 //     return view('welcome');
@@ -62,7 +71,8 @@ return view('tasks.index');
 
 
 
-Route::get('send-mail', [MailController::class, 'sendEmail']);
+Route::get('send-mail', [MailController::class, 'showForm']);
+Route::post('send-mail', [MailController::class, 'sendEmail'])->name('sendMailPost');
 
 
 // To Set Localization in a session
